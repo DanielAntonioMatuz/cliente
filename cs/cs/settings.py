@@ -26,6 +26,7 @@ SECRET_KEY = '+4_3xq4ra!cf^higo#&r)(te4280aomcv^#640hy^w1yttbehz'
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','52.205.148.220']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'login',
 ]
 
 SITE_ID = 1
@@ -128,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 

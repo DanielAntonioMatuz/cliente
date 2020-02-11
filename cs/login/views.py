@@ -46,3 +46,4 @@ class ExampleList2(APIView):
             datas = serializer.data 
             return Response(datas)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+        

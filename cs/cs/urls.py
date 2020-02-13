@@ -19,12 +19,15 @@ from django.urls import path, re_path
 from django.conf.urls import include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
+from rest_framework_swagger.views import get_swagger_view
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'is_staff')
+
+schema_view = get_swagger_view(title="EMS API Documentation")
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -39,4 +42,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^',include(router.urls)),
     re_path(r'^api/v1/', include('login.urls')),
+    re_path(r'^api/v1/', include('Profile.urls')),
+    re_path('api_documentation/', schema_view),
 ]
